@@ -9,8 +9,8 @@ A boilerplate to start a Meteor 1.3 project with some basics, useful snippets an
 ## Features
 - A **full collection example** : The *Posts* collection (logic, publications, ui and good practices)
 - **User accounts** : Complete user management with *user-accounts*, custom templates, schema and methods. See the [auth folder](imports/ui/views/public/auth) for more info.
-- **Private method** ([see logic](imports/startup/utils/private-method.js)) : A class to use private methods a similar way you use *validated method*, including schema validation and `run` method, but can not be called by client through DDP (the server has to expose it to client or it stays server only) ([see an example](imports/api/posts/methods) in methods *update* and *changeCreatedAt*). It allows to put the whole collection logic (client and/or server) in methods with similar syntax.
-- **Validated method mixins** : Checking if user is logged in, if user is an admin, if the request comes from server, and checking schemas (classic and modifiers) ([see logic](imports/startup/utils/validated-method-mixins.js) and [examples here](imports/api/posts/methods))
+- **Private method** ([see logic](imports/startup/utils/private-method.js)) : A class to use private methods a similar way you use *validated method*, including schema validation and `run` method, but can not be called by client through DDP (the server has to expose it to client or it stays server only) ([see an example](imports/api/posts/methods.js#L36) in methods *update* and *changeCreatedAt*). It allows to put the whole collection logic (client and/or server) in methods with similar syntax.
+- **Validated method mixins** : Checking if user is logged in, if user is an admin, if the request comes from server, and checking schemas (classic and modifiers) ([see logic](imports/startup/utils/validated-method-mixins.js) and [examples here](imports/api/posts/methods.js))
 - A **notifier** ([see](imports/startup/services/notifier.service.js)) : Display notifications on client when asked. Calculates the display time based on text length 
 - **No testing** : Because. That's why.
 
