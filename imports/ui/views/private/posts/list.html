@@ -1,0 +1,44 @@
+<template name="private.posts.list">
+    <h1>Posts</h1>
+
+    <div class="form-group">
+        <a href="{{pathFor 'private.posts.add'}}" class="btn btn-primary">
+            <i class="fa fa-plus"></i> Add a post
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-vertical-middle">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Created at</th>
+                <th>Author</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each post in posts}}
+                <tr>
+                    <td>
+                        <a href="{{pathFor "private.posts.edit" postId=post._id}}">
+                            {{post.title}}
+                        </a>
+                    </td>
+                    <td>
+                        {{formatDate post.createdAt}}
+                    </td>
+                    <td>
+                        {{post.author.username}}
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    {{#if isEmpty posts}}
+        <p class="text-muted">
+            There are no posts for now
+        </p>
+    {{/if}}
+</template>

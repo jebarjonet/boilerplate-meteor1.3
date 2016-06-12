@@ -1,0 +1,7 @@
+<template name="public.auth.register">
+    <h2>Create an account</h2>
+
+    {{> quickForm schema=formSchema id="public.auth.register" type="method" meteormethod="user.auth.register"}}
+
+    <a href="{{pathFor 'public.auth.login'}}">Login</a>
+</template>

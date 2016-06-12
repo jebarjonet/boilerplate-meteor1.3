@@ -1,0 +1,8 @@
+<template name="public.auth.login">
+    <h2>Login</h2>
+
+    {{> quickForm schema=formSchema id="public.auth.login"}}
+
+    <a href="{{pathFor 'public.auth.register'}}">Create an account</a> <br>
+    <a href="{{pathFor 'public.auth.forgot'}}">Lost your password ?</a>
+</template>

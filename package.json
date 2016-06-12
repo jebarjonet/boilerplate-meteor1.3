@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "meteor",
+    "test": "meteor test --once --driver-package dispatch:mocha-phantomjs",
+    "test-watch": "meteor test --driver-package practicalmeteor:mocha",
+    "test-app-watch": "meteor test --full-app --driver-package practicalmeteor:mocha"
+  },
+  "dependencies": {
+    "lodash": "^4.13.1",
+    "meteor-node-stubs": "~0.2.0"
+  }
+}

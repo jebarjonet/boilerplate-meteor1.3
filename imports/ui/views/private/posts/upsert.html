@@ -1,0 +1,15 @@
+<template name="private.posts.upsert">
+    <h1>{{#if isEdition}}Edit a post: {{doc.name}}{{else}}Add a post{{/if}}</h1>
+
+    <div class="form-group clearfix">
+        <a class="btn btn-default" href="{{pathFor 'private.posts'}}">
+            <i class="fa fa-arrow-left"></i> <span class="hidden-xs">Back to list</span>
+        </a>
+    </div>
+
+    {{#if isEdition}}
+        {{> quickForm schema=form id="private.posts.update" type="method-update" meteormethod="posts.update" doc=doc singleMethodArgument=true}}
+    {{else}}
+        {{> quickForm schema=form id="private.posts.insert" type="method" meteormethod="posts.insert"}}
+    {{/if}}
+</template>

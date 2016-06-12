@@ -1,0 +1,11 @@
+<template name="public.auth.forgot">
+    <h2>Lost your password ?</h2>
+
+    <p class="help-block">
+        We will send you a link where you will be able to reset your password.
+    </p>
+
+    {{> quickForm schema=formSchema id="public.auth.forgot" type="method" meteormethod="user.auth.forgot"}}
+
+    <a href="{{pathFor 'public.auth.login'}}">Login</a>
+</template>

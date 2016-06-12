@@ -1,0 +1,19 @@
+<template name="layout">
+    <div class="container">
+        <h1>Meteor 1.3 boilerplate</h1>
+
+        {{#if currentUser}}
+            <p>
+                Hello <b>{{currentUser.username}}</b> (<a class="js-logout">Logout</a>)
+            </p>
+        {{else}}
+            <p>
+                You are not logged in. <a href="{{pathFor 'public.auth.login'}}">Login</a>
+            </p>
+        {{/if}}
+
+        {{> Template.dynamic template=main}}
+    </div>
+
+    {{> sAlert}}
+</template>
