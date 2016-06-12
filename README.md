@@ -29,7 +29,6 @@ A boilerplate to start a Meteor 1.3 project with some basics, useful snippets an
 │   │   ├───client
 │   │   │   └───routes
 │   │   │       └───private
-│   │   │
 │   │   ├───forms
 │   │   │   ├───private
 │   │   │   └───public
