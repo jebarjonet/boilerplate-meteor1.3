@@ -6,10 +6,10 @@ import {sAlert} from "meteor/juliancwirko:s-alert";
  * Having {{> sAlert}} somewhere on the page
  */
 export const Notifier = (function () {
-    let types = "error warning info success".split(" "),
-        functions = {};
+    const types = "error warning info success".split(" ");
+    let functions = {};
 
-    _.forEach(types, function (type) {
+    types.forEach((type) => {
         functions[type] = function (input, options) {
             let text = input;
 
@@ -31,14 +31,10 @@ export const Notifier = (function () {
 
     return functions;
 
-    function notify(text, type, options) {
-        type = type ? type : "error";
-
-        options = options || {};
-
+    function notify(text, type = "error", options = {}) {
         if (!options.timeout) {
-            const wordsPerMinute = 250,
-                readingTime = _.words(text).length * 60000 / wordsPerMinute;
+            const wordsPerMinute = 250;
+            const readingTime = _.words(text).length * 60000 / wordsPerMinute;
             options.timeout = _.max([2000, readingTime]);
         }
 
